@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1 class="col-md-offset-1"><%= @page_title %></h1>
+</div>
+
+<div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <table>
+          <tr>
+            <td><h4>Title:  <%= @movie.title %></h4></td>
+          </tr>
+           <tr>
+            <td><h6>Year:  <%= @movie.year %></h6></td>
+          </tr>
+          <tr>
+            <td><h6>Duration:  <%= @movie.duration %> minutes</h6></td>
+          </tr>
+        </table>
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default"><a href="/<%= @type %>/<%= @movie.id %>">View</a></button>
+            <button type="button" class="btn btn-default"><a href="/<%= @type %>/<%= @movie.id %>">Edit</a></button>
+            <button type="button" class="btn btn-default"><td><a href="/delete_<%= @type %>/<%= @movie.id %>">Delete</a></td></button>
+            <button type="button" class="btn btn-default"><a href="/<%= @type %>/">Back</a></button>
+          </div>
+      </div>
+      <div class="panel-body">
+        <table>
+          <tr>
+            <td width="30%"><img src = "<%= @movie.image_url %>"></td>
+            <td><%= @movie.description %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+</div>
