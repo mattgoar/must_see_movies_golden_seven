@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1 class="col-md-offset-1"><%= @page_title %></h1>
+  <div class="btn-group col-md-offset-1" role="group" aria-label="...">
+    <button type="button" class="btn btn-default"><a href="/<%= @type.pluralize %>">Back</a></button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Edit <%= @type %></div>
+    <div class="panel-body">
+      <form action="/<%= @type.pluralize %>/edit_<%= @type %>/<%= @person.id %>">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" value="<%= @person.name %>">
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="text" class="form-control" id="dob"  name="dob" value="<%= @person.dob %>">
+        </div>
+        <div class="form-group">
+          <label for="bio">Bio</label>
+          <input type="text" class="form-control" id="bio"  name="bio" value="<%= @person.bio %>">
+        </div>
+        <div class="form-group">
+          <label for="pic">Picture URL</label>
+          <input type="text" class="form-control" id="pic"  name="pic" value="<%= @person.image_url %>">
+        </div>
+
+          <button>Edit <%= @type %></button>
+      </form>
+
+    </div>
+  </div>
+</div>

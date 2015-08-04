@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1 class="col-md-offset-1"><%= @page_title %></h1>
+  <div class="btn-group col-md-offset-1" role="group" aria-label="...">
+    <button type="button" class="btn btn-default"><a href="/<%= @type.pluralize %>">Back</a></button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Add new <%= @type %></div>
+    <div class="panel-body">
+      <form action="/<%= @type.pluralize %>/create_<%= @type %>">
+        <div class="form-group">
+          <label for="name">Title</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+        </div>
+        <div class="form-group">
+          <label for="year">Year</label>
+          <input type="text" class="form-control" id="year"  name="year" placeholder="Year">
+        </div>
+        <div class="form-group">
+          <label for="duration">Duration</label>
+          <input type="text" class="form-control" id="duration"  name="duration" placeholder="Duration">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" id="description"  name="description" placeholder="Description">
+        </div>
+        <div class="form-group">
+          <label for="pic">Picture URL</label>
+          <input type="text" class="form-control" id="pic"  name="pic" placeholder="Picture URL">
+        </div>
+
+          <button>Create <%= @type %></button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

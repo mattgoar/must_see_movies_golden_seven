@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1 class="col-md-offset-1"><%= @page_title %></h1>
   <div class="btn-group col-md-offset-1" role="group" aria-label="...">
-    <button type="button" class="btn btn-default"><a href="/">Create New</a></button>
+    <button type="button" class="btn btn-default"><a href="/movies/new_form">Create New</a></button>
     <button type="button" class="btn btn-default"><a href="/">Back</a></button>
   </div>
 </div>
@@ -10,31 +10,21 @@
   <% @movies.each do |movie| %>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <table>
-          <tr>
-            <td><h4>Title:  <%= movie.title %></h4></td>
-          </tr>
-           <tr>
-            <td><h6>Year:  <%= movie.year %></h6></td>
-          </tr>
-          <tr>
-            <td><h6>Duration:  <%= movie.duration %> minutes</h6></td>
-          </tr>
-        </table>
+          <div><h4>Title:  <%= movie.title %></h4></div>
+          <div><h6>Year:  <%= movie.year %></h6></div>
+          <div><h6>Duration:  <%= movie.duration %> minutes</h6></div>
           <div class="btn-group" role="group" aria-label="...">
             <button type="button" class="btn btn-default"><a href="/<%= @type %>/<%= movie.id %>">View</a></button>
-            <button type="button" class="btn btn-default"><a href="/<%= @type %>/<%= movie.id %>">Edit</a></button>
+            <button type="button" class="btn btn-default"><a href="/<%= @type %>/edit_form/<%= movie.id %>">Edit</a></button>
             <button type="button" class="btn btn-default"><td><a href="/delete_<%= @type %>/<%= movie.id %>">Delete</a></td></button>
             <button type="button" class="btn btn-default"><a href="/">Back</a></button>
           </div>
       </div>
       <div class="panel-body">
-        <table>
-          <tr>
-            <td width="30%"><img src = "<%= movie.image_url %>"></td>
-            <td><%= movie.description %></td>
-          </tr>
-        </table>
+          <div class="row">
+            <div class="col-md-3"><img src = "<%= movie.image_url %>"></div>
+            <div class="col-md-9"><%= movie.description  %></div>
+          </div>
       </div>
     </div>
   <% end %>

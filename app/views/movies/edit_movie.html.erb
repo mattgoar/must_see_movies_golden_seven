@@ -1,0 +1,39 @@
+<div class="page-header">
+  <h1 class="col-md-offset-1"><%= @page_title %></h1>
+  <div class="btn-group col-md-offset-1" role="group" aria-label="...">
+    <button type="button" class="btn btn-default"><a href="/<%= @type.pluralize %>">Back</a></button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Edit <%= @type %></div>
+    <div class="panel-body">
+      <form action="/<%= @type.pluralize %>/edit_<%= @type %>/<%= @movie.id %>">
+        <div class="form-group">
+          <label for="name">Title</label>
+          <input type="text" class="form-control" id="title" name="title" value="<%= @movie.title %>">
+        </div>
+        <div class="form-group">
+          <label for="year">Year</label>
+          <input type="text" class="form-control" id="year"  name="year" value="<%= @movie.year %>">
+        </div>
+        <div class="form-group">
+          <label for="duration">Duration</label>
+          <input type="text" class="form-control" id="duration"  name="duration" value="<%= @movie.duration %>">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" id="description"  name="description" value="<%= @movie.description %>">
+        </div>
+        <div class="form-group">
+          <label for="pic">Picture URL</label>
+          <input type="text" class="form-control" id="pic"  name="pic" value="<%= @movie.image_url %>">
+        </div>
+
+          <button>Edit <%= @type %></button>
+      </form>
+
+    </div>
+  </div>
+</div>
